@@ -7,7 +7,7 @@ import java.sql.*;
 public class Connector {
     public boolean login(String id,String pwd) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/login_details","root","password");
+        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:portnumber/login_details","sqlserver id","sqlserver password");
         Statement stmt=con.createStatement();
         String str="select * from login_details where user_id='"+id+"' and passwords='"+pwd+"';";
         ResultSet rs=stmt.executeQuery(str);
